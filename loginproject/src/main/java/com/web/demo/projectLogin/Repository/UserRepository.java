@@ -1,0 +1,16 @@
+package com.web.demo.projectLogin.Repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import org.springframework.stereotype.Repository;
+
+import com.web.demo.projectLogin.model.UserDtls;
+
+@Repository
+public interface UserRepository extends JpaRepository<UserDtls, Long> {
+
+	public boolean existsByEmail(String email);
+	public UserDtls findByEmail(String email);
+	
+}
+ 
